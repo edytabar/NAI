@@ -1,0 +1,35 @@
+#Edyta Bartos
+#s17699
+#puzzle 2 - Power of Thor
+
+import sys
+import math
+
+# Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
+
+# light_x: the X position of the light of power
+# light_y: the Y position of the light of power
+# initial_tx: Thor's starting X position
+# initial_ty: Thor's starting Y position
+
+light_x, light_y, initial_tx, initial_ty = [int(i) for i in input().split()]
+tx, ty = initial_tx, initial_ty
+# game loop
+while 1:
+    remaining_turns = int(input())
+    go_x = ""
+    go_y = ""
+    if tx > light_x:
+        go_x = "W"
+        tx -= 1
+    elif tx < light_x:
+        go_x = "E"
+        tx += 1
+    if ty > light_y:
+        go_y = "N"
+        ty -= 1
+    elif ty < light_y:
+        go_y = "S"
+        ty += 1
+    # A single line providing the move to be made: N NE E SE S SW W or NW
+    print(go_y + go_x)
