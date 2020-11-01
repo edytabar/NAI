@@ -1,0 +1,20 @@
+#Edyta Bartos
+#s17699
+
+import sys
+import math
+
+n = int(input())  # the number of temperatures to analyse
+max = 5526
+
+for i in input().split():
+    # t: a temperature expressed as an integer ranging from -273 to 5526
+    t = int(i)
+    if abs(t) < abs(max):
+        max = t
+    elif abs(t) == abs (max) and t > max:
+        max = t
+if n == 0:
+    print("0")
+else:
+    print(max)
