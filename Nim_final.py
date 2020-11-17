@@ -2,14 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 @authors: Marcin Grelewicz (s17692), Edyta Bartos (s17699)
+based on the example of easyAI usage on: https://zulko.github.io/easyAI/examples/quick_example.html
 
-This is a modified version of the NIM game: https://pl.wikipedia.org/wiki/Nim with rules described below:
+This is a modified version of the NIM game: https://pl.wikipedia.org/wiki/Nim, with rules described below:
     
     In turn, 2 players remove from one to five coins, from first, second or third heap of coins. 
     The player who removes the last coin from one of the heaps looses. Players can remove coins from one heap at time.
     Example of player's move: "what do you play ? 1,3", where first number means heap and second number of coins.
 
-To run the game you need to install easyAI framework: https://zulko.github.io/easyAI/installation.html
+To run the game you need to install:
+- easyAI framework: https://zulko.github.io/easyAI/installation.html
+- python3 environment: https://www.python.org/downloads/
 
 In this game we use The Negamax algorithm: https://en.wikipedia.org/wiki/Negamax, which always look for the shortest 
 path to victory, or the longest path to defeat.
@@ -59,7 +62,7 @@ class NIM( TwoPlayersGame ):
 # Start a match (and store the history of moves when it ends)
 ai = Negamax(6) # The AI will think 6 moves in advance
 game = NIM( [ Human_Player(), AI_Player(ai) ] )
-history = game.play() # variable history is a list [(g1,m1),(g2,m2)...] where gi is a copy of the game after i moves and mi is the move made by the player whose turn it was.
+history = game.play()
 
 if game.nplayer ==2:
     print('AI wins!')
